@@ -1,0 +1,54 @@
+
+<p>listado works!</p>
+
+<h2>HEROES</h2>
+
+<!--La forma mas básica seria:
+<ul>
+    <li>{{heroes[0]}}</li>
+    <li>{{heroes[1]}}</li>
+    <li>{{heroes[2]}}</li>
+    <li>{{heroes[3]}}</li>
+</ul>
+El problema de esta idea e sque yo no se cuando heroes van a seguir siendo
+(es decir, no se cuantos elemntos tengo en el arreglo, o quizas alguno se modifica)
+
+-->
+<!--La manera mas facil de imprimir y clonar esta linea de codigo se hace a traves de
+una DIRECTIVA ESTRUCTURAL: la idea de esta directiva es poder cambiar y manipular
+el DOM, es por eso que aca nos metemeos de lleno con angular  y utilizaremos una de sus
+directivas: el *ngFor que lo que hace es duplicar en el html-->
+<ul>
+    <!--La directiva *ngFor es muy parecida a utilizar un ciclo for, solo que en el mismo
+    templae de html -->
+    <li *ngFor="let heroe of         heroe">
+<!--            declaramos        |   |esta es la 
+                una variable      |   |propiedad 
+                llamada heroe     |   |que yo tengo definida
+                es la referencia  |   |es decir mi arreglo
+                a cada uno de los |   |dentro del Listadocomponent
+                valores que van a |
+                estar dentro de mi|
+                arreglo en Heroe  |   
+             -->                            
+<!--Como mi  nueva var heroe es de tipo string puedo colocarlo aca-->
+        {{heroe}}
+    </li>
+</ul>
+
+
+
+<button (click)="borrarHeroe()">
+    Borrar
+</button>
+
+<!--La otra directiva que se usa es *ngIf: lo que hace es mostrar algo de manera condicional-->
+<!--La clave es saber cuando una heroeBorrado es diferente a vacio, entonces la idea es que se muestre:-->
+<div *ngIf    =  "heroeBorrado      !==               ''  "><!--=> si no he borrado nada entonces no se debe mostrar nuestro titulo de heroe borrado -->
+<!--  condic.     heroeBorrado     es distinto        a un string vacio                 -->    
+    <p>Heroe Borrado</p>
+    <span>{{heroeBorrado}}</span>
+</div>
+
+
+<!--En caso de que no hayamos borrado ningun heroe y queramos hacerle saber a nuestro usuario con un mensaje que no realizo nignuna accion podemos hacerlo mediante:-->
