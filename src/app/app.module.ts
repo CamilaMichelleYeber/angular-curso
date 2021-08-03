@@ -1,10 +1,12 @@
 
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
-import { ListadoComponent } from './heroes/listado/listado.component';
+//import { ListadoComponent } from './heroes/listado/listado.component';
 import { NgModule } from '@angular/core';
-import { HeoreComponent } from './heroes/heroe/heroe.component';
-import { ContadorComponent } from './contador/contador/contador.component';
+import { HeroesModule } from './heroes/heroes.module';
+import { ContadorModule } from './contador/contador.module';
+
+
 
 
 
@@ -16,10 +18,10 @@ import { ContadorComponent } from './contador/contador/contador.component';
     
   ],
   imports: [
+    //en las impoprtaciones siempre van los MODULOS
     BrowserModule,
-    HeoreComponent, //importamos nuestro componente HeroeComponent, y arriba vamos a ver que solo hace la autoimportancion
-    ListadoComponent,//importamos nuestro componente ListadoComponent, y arriba vamos a ver que solo hace la autoimportancion
-    ContadorComponent    
+    HeroesModule, //importamos nuestro componente HeroeComponent, y arriba vamos a ver que solo hace la autoimportancion
+    ContadorModule,  
   ],
   providers: [],
   bootstrap: [AppComponent]
