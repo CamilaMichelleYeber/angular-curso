@@ -33,6 +33,7 @@ import {Component} from '@angular/core';
   `
 
 })
+
 export class ContadorComponent{
   title : string = 'bases';
   numero:number = 10;

@@ -43,12 +43,33 @@ directivas: el *ngFor que lo que hace es duplicar en el html-->
 </button>
 
 <!--La otra directiva que se usa es *ngIf: lo que hace es mostrar algo de manera condicional-->
-<!--La clave es saber cuando una heroeBorrado es diferente a vacio, entonces la idea es que se muestre:-->
-<div *ngIf    =  "heroeBorrado      !==               ''  "><!--=> si no he borrado nada entonces no se debe mostrar nuestro titulo de heroe borrado -->
-<!--  condic.     heroeBorrado     es distinto        a un string vacio                 -->    
+<!--La clave es saber cuando una heroeBorrado es diferente a vacio, entonces la idea es que se muestre:
+1mer forma de aviso de notificacion de borrado
+    <div *ngIf    =  "heroeBorrado      !==               ''  ">--><!--=> si no he borrado nada entonces no se debe mostrar nuestro titulo de heroe borrado -->
+<!--  condic.     heroeBorrado     es distinto        a un string vacio                  
     <p>Heroe Borrado</p>
     <span>{{heroeBorrado}}</span>
 </div>
-
+  --> 
 
 <!--En caso de que no hayamos borrado ningun heroe y queramos hacerle saber a nuestro usuario con un mensaje que no realizo nignuna accion podemos hacerlo mediante:-->
+<div *ngIf="!heroeBorrado;                                                 else noBorrado">
+<!--        esta seria la condicion                                       el else debe ir seguido de una referencia local
+            que tiene que regresar un valor
+            booleano (true/false) y que evaluara el contenido de abajo              -->
+    <h3>Usted no ha borrado nada todavía</h3>
+
+</div>
+
+<!--2da forma de notificar cuando ya dejo de borrar utilizando ng-template
+este es un componente propio de angular que no tiene ninguna contraparte del lado del html
+lo que hará sera mostrar el contenido que tiene dentro basando en la condicion noBorrado-->
+<ng-template #noBorrado>
+    <h3>usted no ha borrado nada</h3>
+</ng-template>
+
+<!--Que son las referencia locales?
+las dectaremos con la referencia del signo #, no es algo que exita del lado del componente de ts
+basicamente lo que le estoy diciendo arriba en el div es que si no se cumple la condicion pasada por el if, que mande lo que esta en el else con #-->
+
+

@@ -9,8 +9,6 @@ import { Component } from "@angular/core";
     selector: 'app-heroe', //en el selector lo que estamos creando es nuestra etiqueta para usar en nuestro .component.html (usualmente tiene el mismo nombre que el componente pero sin la palabra component)
     templateUrl: 'heroe.component.html' //mi template (plantilla) que voy a utilizar es la que tengo ya guardada y creada en mi archivo .component.html
 })
-
-
 //1.Creo la clase y la exporto
 export class HeoreComponent{
     //creamos propiedades dentro de nuestro componente

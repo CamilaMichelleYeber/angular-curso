@@ -5,6 +5,7 @@ import { Component} from '@angular/core';
   templateUrl: './listado.component.html',
   styleUrls: ['./listado.component.css']
 })
+
 export class ListadoComponent {
   /*voy a definir adentro de mi componente un arreglo[] de heroes */
       heroe   :     string[]             =['Harry', 'Kevin', 'Axl', 'Mick'];
